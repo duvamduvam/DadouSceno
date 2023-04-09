@@ -2,8 +2,9 @@ import logging
 import jsonpath_rw_ext
 
 from dadou_utils.files.abstract_json_manager import AbstractJsonManager
+from dadou_utils.utils_static import AUDIOS, JSON_AUDIO_SEQUENCE
 
-from dadourobot.robot_config import JSON_AUDIOS, BASE_PATH, JSON_DIRECTORY
+from dadousceno.sceno_config import JSON_AUDIOS, BASE_PATH, JSON_DIRECTORY
 
 #TODO improve json management
 
@@ -13,9 +14,12 @@ class ScenoJsonManager(AbstractJsonManager):
     audios = None
     audio_seq = None
 
-    def __init__(self):
-        super().__init__(BASE_PATH, JSON_DIRECTORY)
-        self.audios = self.open_json(JSON_AUDIOS)
+    def __init__(self, config):
+
+        self.config = config
+        component = [self.config[JSON_AUDIOS]]
+
+        super().__init__(config, component)
 
     def get_audio_seq(self, key):
         result = self.find(self.audio_seq, 'audios_seq', '$.keys[?key ~ ' + key + ']')
