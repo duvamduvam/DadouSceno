@@ -18,6 +18,8 @@ config[I2C_ENABLED] = True
 config[PWM_CHANNELS_ENABLED] = True
 config[DIGITAL_CHANNELS_ENABLED] = False
 
+config[STOP_KEY] = "Db"
+
 ########## RPI PINS #########
 
 config[SHUTDOWN_PIN] = board.D16

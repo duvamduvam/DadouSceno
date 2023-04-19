@@ -4,7 +4,8 @@ import jsonpath_rw_ext
 from dadou_utils.files.abstract_json_manager import AbstractJsonManager
 from dadou_utils.utils_static import AUDIOS, JSON_AUDIO_SEQUENCE
 
-from dadousceno.sceno_config import JSON_AUDIOS, BASE_PATH, JSON_DIRECTORY
+from dadousceno.sceno_config import JSON_AUDIOS, BASE_PATH, JSON_DIRECTORY, config
+
 
 #TODO improve json management
 
@@ -14,10 +15,9 @@ class ScenoJsonManager(AbstractJsonManager):
     audios = None
     audio_seq = None
 
-    def __init__(self, config):
+    def __init__(self):
 
-        self.config = config
-        component = [self.config[JSON_AUDIOS]]
+        component = [config[JSON_AUDIOS]]
 
         super().__init__(config, component)
 
