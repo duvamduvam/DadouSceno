@@ -7,11 +7,12 @@ export PROJECT_PATH=~/Nextcloud/Didier/python/dadou_sceno
 
 export USER_HOST="s"
 export ROOT_HOST="sr"
-export RPI_IP="192.168.1.220"
+#export RPI_IP="192.168.1.220"
+export RPI_HOST_NAME="sceno.local"
 
 export INSTALL_LIB="yes"
 #export SET_USB_AUDIO="yes"
-#export ACTIVATE_I2C="yes"
+export ACTIVATE_I2C="yes"
 export SET_BASHRC="yes"
 export SET_VIMRC="yes"
 export INSTALL_SERVICE="yes"
@@ -20,7 +21,7 @@ export SERVICE_NAME=sceno
 export LOG_FILE=sceno.log
 
 export PROJECT_SYSTEM_LIB=
-export PROJECT_PYTHON_LIB="adafruit-circuitpython-rfm9x"
+export PROJECT_PYTHON_LIB="adafruit-circuitpython-rfm9x adafruit-circuitpython-pcf8574"
 
 ####################################################################
 
